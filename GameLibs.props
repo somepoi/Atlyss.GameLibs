@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <SteamBuildId>21474249</SteamBuildId>
+    <PackageRevision>0</PackageRevision>
+    <PackageVersion>0.$(SteamBuildId).$(PackageRevision)</PackageVersion>
+  </PropertyGroup>
+</Project>

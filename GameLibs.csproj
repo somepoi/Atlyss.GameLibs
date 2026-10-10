@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="GameLibs.props" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>Somepoi.Atlyss.GameLibs</PackageId>
+    <Authors>somepoi</Authors>
+    <Description>All stripped ATLYSS managed game, Unity and third-party compile references from Steam build $(SteamBuildId). Independent of mod loaders.</Description>
+    <PackageTags>ATLYSS;Unity;modding;GameLibs;references</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>THIRD-PARTY-NOTICES.md</PackageLicenseFile>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <NoBuild>true</NoBuild>
+    <!-- Reference-only PackageReference package; legacy packages.config is unsupported. -->
+    <NoWarn>$(NoWarn);NU5131</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="references/*.dll" Exclude="references/Unity.Burst.Cecil*.dll" Pack="true" PackagePath="ref/netstandard2.1/" />
+    <!-- Unity's compiler copy of Cecil conflicts with the Mono.Cecil NuGet API. -->
+    <None Include="references/Unity.Burst.Cecil*.dll" Pack="true" PackagePath="tools/unity-burst/" />
+    <None Include="provenance.json" Pack="true" PackagePath="" />
+    <None Include="README.md;THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <Target Name="ValidateSnapshot" BeforeTargets="GenerateNuspec">
+    <Exec Command="dotnet run --project &quot;$(MSBuildProjectDirectory)/tools/GameLibsTool/GameLibsTool.csproj&quot; -- &quot;$(MSBuildProjectDirectory)&quot;" />
+  </Target>
+</Project>
