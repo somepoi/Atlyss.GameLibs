@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>Somepoi.Atlyss.GameLibs</PackageId>
     <Authors>somepoi</Authors>
-    <Description>All stripped ATLYSS managed game, Unity and third-party compile references from Steam build $(SteamBuildId). Independent of mod loaders.</Description>
+    <Description>All stripped ATLYSS managed game, Unity and third-party compile references from Steam build $(SteamBuildId).</Description>
     <PackageTags>ATLYSS;Unity;modding;GameLibs;references</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <IncludeBuildOutput>false</IncludeBuildOutput>

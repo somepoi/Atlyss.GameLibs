@@ -86,7 +86,7 @@ jobs:
           NUGET_USER: ${{ vars.NUGET_USER }}
         run: |
           if [ -z "$NUGET_USER" ]; then
-            echo 'Set the NUGET_USER repository variable to your nuget.org profile username and configure Trusted Publishing. See README.md.' >&2
+            echo 'Set the NUGET_USER repository variable to your nuget.org profile username and configure Trusted Publishing.' >&2
             exit 1
           fi
       - name: Authenticate to NuGet with GitHub OIDC
@@ -109,6 +109,5 @@ jobs:
             Compile-only references from ATLYSS Steam build ${{ needs.package.outputs.steam_build }}.
             Includes ${{ needs.package.outputs.assembly_count }} managed game, Unity and third-party assemblies with method bodies removed.
             NuGet package: Somepoi.Atlyss.GameLibs ${{ needs.package.outputs.version }}.
-            Use with netstandard2.1 or newer; install your chosen mod loader separately.
           files: artifacts/*.nupkg
           fail_on_unmatched_files: true
