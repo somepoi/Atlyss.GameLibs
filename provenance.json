@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "steamAppId": 2768430,
   "steamBuildId": "21474249",
-  "revision": 0,
-  "packageVersion": "0.21474249.0",
+  "revision": 1,
+  "packageVersion": "0.21474249.1",
   "stripTool": "GameLibsTool using Mono.Cecil 0.11.6; bodies/resources removed; visibility preserved",
   "excludedFrameworkAssemblies": [
     "Mono.Security.dll",
