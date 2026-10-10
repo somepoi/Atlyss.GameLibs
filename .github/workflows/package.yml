@@ -107,7 +107,7 @@ jobs:
           name: ATLYSS GameLibs ${{ needs.package.outputs.version }}
           body: |
             Compile-only references from ATLYSS Steam build ${{ needs.package.outputs.steam_build }}.
-            Includes ${{ needs.package.outputs.assembly_count }} managed game, Unity and third-party assemblies with method bodies removed.
+            Includes managed game, Unity and third-party assemblies with method bodies removed.
             NuGet package: Somepoi.Atlyss.GameLibs ${{ needs.package.outputs.version }}.
           files: artifacts/*.nupkg
           fail_on_unmatched_files: true
